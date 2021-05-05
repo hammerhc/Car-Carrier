@@ -7,7 +7,7 @@ Clone the repository
 
 ### Python ###
 Windows:
-Download and install Python from [here] (https://www.python.org/downloads/)
+Download and install Python from [here](https://www.python.org/downloads/)
 
 Linux:
 Install Python 3

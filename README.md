@@ -58,6 +58,11 @@ pip install -r requirements.txt
 
 ## Run ##
 
+Run the Docker-Container
+```
+docker-compose -f backend/docker/docker-compose.yml up -d 
+```
+
 The Virtualenv must be activated before executing the following commands 
 
 Migrations

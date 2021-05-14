@@ -50,11 +50,6 @@ You should now see the “env” indicator at the beginning of your command prom
 (env) prompt$
 ```
 
-Deactivate Virtualenv
-```
-deactivate
-```
-
 ### Packages ###
 Install all required packages
 ```

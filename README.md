@@ -50,6 +50,11 @@ You should now see the “env” indicator at the beginning of your command prom
 (env) prompt$
 ```
 
+Deactivate Virtualenv
+```
+deactivate
+```
+
 ### Packages ###
 Install all required packages
 ```
@@ -58,3 +63,20 @@ pip install -r requirements.txt
 
 ## Run ##
 
+The Virtualenv must be activated before executing the following commands 
+
+Migrations
+
+```
+python backend/src/manage.py db init
+
+python backend/src/manage.py db migrate
+
+python backend/src/manage.py db upgrade
+```
+
+Run Python Application
+
+```
+python backend/src/app.py
+```

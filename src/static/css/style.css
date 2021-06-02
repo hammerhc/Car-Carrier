@@ -1,0 +1,62 @@
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+.box {
+  display: flex;
+  flex-flow: column;
+  height: 100%;
+}
+
+.box .row.header {
+  flex: 0 1 80px;
+}
+
+.box .row.content {
+  flex: 1 1 auto;
+}
+
+.box .row.footer {
+  flex: 0 1 100px;
+}
+
+.row.header {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid black;
+}
+
+.row.footer {
+    border-top: 1px solid black;
+}
+
+.navigation {
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    flex-grow: 2;
+}
+
+.navigation.navbar, .navigation.search {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+}
+
+.profile {
+    flex-grow: 1;
+    text-align: end;
+}
+
+.logo {
+    flex-grow: 1;
+}
+
+#navButtonAdmin {
+  display: none;
+}
+

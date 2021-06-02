@@ -1,5 +1,19 @@
-from flask import Flask, request, abort
+from flask import Flask, request, abort, render_template
 from flask_sqlalchemy import SQLAlchemy
+import os
+
+""" filepath = os.path.realpath(__file__)
+
+def uppath(path, n):
+    for i in range(n):
+        path = os.path.dirname(path)
+    
+    return path
+
+project_path = uppath(filepath, 3)
+frontend_path = os.path.join(project_path, "frontend")
+templates_path = os.path.join(frontend_path, "templates")
+static_path = os.path.join(frontend_path, "static") """
 
 app = Flask(__name__)
 app.config["DEBUG"] = True
@@ -14,6 +28,7 @@ import controllers.roles as roles
 import controllers.states as states
 import controllers.tickets as tickets
 import controllers.users as users
+
 
 @app.errorhandler(400)
 def bad_request(error):
@@ -50,7 +65,6 @@ def forbidden(error):
     return {"result": result}
 
 
-
 @app.errorhandler(404)
 def not_found(error):
     result = {
@@ -83,6 +97,26 @@ def server_error(error):
     }
 
     return {"result": result}
+
+@app.route("/", methods=['GET'])
+def home_page():
+    return render_template("index.html")
+
+@app.route("/cars", methods=['GET'])
+def cars_page():
+    return render_template("cars.html")
+
+@app.route("/orders", methods=['GET'])
+def orders_page():
+    return render_template("orders.html")
+
+@app.route("/help", methods=['GET'])
+def help_page():
+    return render_template("help.html")
+
+@app.route("/admin", methods=['GET'])
+def admin_page():
+    return render_template("admin.html")
 
 @app.route("/login", methods=['POST'])
 def request_login():

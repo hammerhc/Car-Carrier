@@ -1,6 +1,15 @@
 from datetime import datetime
+import hashlib, binascii, os
 from app import db
 
+
+def hash_password(password):
+    """Hash a password for storing."""
+    salt = hashlib.sha256(os.urandom(60)).hexdigest().encode('ascii')
+    pwdhash = hashlib.pbkdf2_hmac('sha512', password.encode('utf-8'), 
+                                salt, 100000)
+    pwdhash = binascii.hexlify(pwdhash)
+    return (salt + pwdhash).decode('ascii')
 
 class User(db.Model):
     __tablename__ = "user"
@@ -14,9 +23,8 @@ class User(db.Model):
 
     def __init__(self, username, password, role_id):
         self.username = username
-        self.password = password
+        self.password = hash_password(password)
         self.role_id = role_id
-
 
 class Role(db.Model):
     __tablename__ = "role"
@@ -75,10 +83,12 @@ class Ticket(db.Model):
     title = db.Column(db.String(), nullable=False)
     owner = db.Column(db.Integer, db.ForeignKey("user.id"), nullable=False)
     customer = db.Column(db.Integer, db.ForeignKey("user.id"), nullable=False)
+    state = db.Column(db.Integer, db.ForeignKey("state.id"), nullable=False)
     date = db.Column(db.Date, nullable=False)
     message = db.relationship('Message', backref='message_id', lazy=True)
     owner_id = db.relationship('User', foreign_keys=[owner], backref='ticket_owner', lazy=True)
     customer_id = db.relationship('User', foreign_keys=[customer], backref='ticket_customer', lazy=True)
+    state_id = db.relationship('State', backref='ticket_state', lazy=True)
 
     def __init__(self, title, owner, customer, date):
         self.title = title
@@ -86,6 +96,15 @@ class Ticket(db.Model):
         self.customer = customer
         self.date = date
 
+
+class State(db.Model):
+    __tablename__ = "state"
+
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(), nullable=False)
+
+    def __init__ (self, name):
+        self.name = name
 
 class Message(db.Model):
     __tablename__ = "message"

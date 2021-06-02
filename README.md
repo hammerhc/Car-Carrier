@@ -36,12 +36,12 @@ Activate Virtualenv
 
 Windows:
 ```
-.\env\scripts\activate
+.\backend\env\scripts\activate
 ```
 
 Linux:
 ```
-source env/bin/activate
+source backend/env/bin/activate
 ```
 
 You should now see the “env” indicator at the beginning of your command prompt.

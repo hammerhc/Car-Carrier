@@ -79,3 +79,9 @@ Run Python Application
 ```
 python src/app.py
 ```
+
+Open your Browser on following site:
+
+```
+http://localhost:5000/
+```

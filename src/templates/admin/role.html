@@ -6,4 +6,21 @@
 
 {% block content %}
 <h1>Role</h1>
+
+<div class="detailsContainer">
+    <label for="inputName">Name</label>
+    <input id="inputName" type="text">
+
+    <input id="roleCustomer" type="radio" name="role" value="customer">
+    <label for="roleCustomer">Customer</label>
+
+    <input id="roleAgent" type="radio" name="role" value="agent">
+    <label for="roleAgent">Agent</label>
+
+    <input id="roleAdmin" type="radio" name="role" value="admin">
+    <label for="roleAdmin">Admin</label>
+
+    <button id="cancelButton" class="formButton" onclick="cancel()">Cancel</button>
+    <button id="saveButton" class="formButton" onclick="save()">Save</button>
+</div>
 {% endblock %}

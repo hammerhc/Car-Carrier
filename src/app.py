@@ -114,11 +114,6 @@ def tickets_page():
         return render_template("ticket/ticket.html")
     else:
         return render_template("ticket/tickets.html")
-    
-
-@app.route("/admin", methods=['GET'])
-def admin_page():
-    return render_template("admin/admin.html")
 
 
 @app.route("/account", methods=['GET'])

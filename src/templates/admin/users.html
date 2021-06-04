@@ -5,5 +5,17 @@
 {% endblock %}
 
 {% block content %}
+<button id="buttonUsers" class="navButton" onclick="users()">Users</button>
+<button id="buttonRoles" class="navButton" onclick="roles()">Roles</button>
+
 <h1>Users</h1>
+<table id="usersTable">
+    <tr>
+        <th>User ID</th>
+        <th>Username</th>
+        <th>Role</th>
+        <th>Edit</th>
+        <th>Remove</th>
+    </tr>
+</table>
 {% endblock %}

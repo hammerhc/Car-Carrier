@@ -44,6 +44,9 @@ function createRows() {
 
 function editTicket(event) {
     var ticketId = event.target.id.replace("editTicket", "");
+
+    navigate("/tickets?id=" + ticketId);
+    
 }
 
 function closeTicket(event) {

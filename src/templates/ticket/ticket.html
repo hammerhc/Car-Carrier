@@ -5,5 +5,20 @@
 {% endblock %}
 
 {% block content %}
-<h1>Ticket</h1>
+<div class="contentHeader">
+    <button class="backButton" onclick="back()">Back</button>
+    <span id="ticketId">Ticket ID: </span>
+    <span id="ticketTitle">Ticket Title: </span>
+    <button id="closeTicketButton" onclick="closeTicket()">Close Ticket</button>
+</div>
+
+<div class="detailsContainer">
+    <div id="messageContainer">
+    </div>
+
+    <div id="controlsContainer">
+        <input type="text" id="messageInput">
+        <button id="sendMessageButton" onclick="sendMessage()">Send Message</button>
+    </div>
+</div>
 {% endblock %}

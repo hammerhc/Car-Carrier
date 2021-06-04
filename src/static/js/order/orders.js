@@ -21,9 +21,9 @@ var orders = [
     }
 ]
 
-createCards();
+createRows();
 
-function createCards() {
+function createRows() {
     for (var i = 0; i < orders.length; i++) {
         var row = `<tr>
                         <td>${orders[i].id}</td>

@@ -17,7 +17,7 @@ var profileButton = document.getElementById("profileButton");
 setEvents();
 
 function navigate(path) {
-    document.location.pathname = path;
+    window.location = location.protocol + "//" + location.host + path;
 }
 
 function setEvents() {

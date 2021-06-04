@@ -1,19 +1,5 @@
 from flask import Flask, request, abort, render_template
 from flask_sqlalchemy import SQLAlchemy
-import os
-
-""" filepath = os.path.realpath(__file__)
-
-def uppath(path, n):
-    for i in range(n):
-        path = os.path.dirname(path)
-    
-    return path
-
-project_path = uppath(filepath, 3)
-frontend_path = os.path.join(project_path, "frontend")
-templates_path = os.path.join(frontend_path, "templates")
-static_path = os.path.join(frontend_path, "static") """
 
 app = Flask(__name__)
 app.config["DEBUG"] = True
@@ -53,6 +39,7 @@ def unauthorized(error):
 
     return {"result": result}
 
+
 @app.errorhandler(403)
 def forbidden(error):
     result = {
@@ -76,6 +63,7 @@ def not_found(error):
 
     return {"result": result}
 
+
 @app.errorhandler(405)
 def method_not_allowed(error):
     result = {
@@ -86,6 +74,7 @@ def method_not_allowed(error):
     }
 
     return {"result": result}
+
 
 @app.errorhandler(500)
 def server_error(error):
@@ -98,44 +87,89 @@ def server_error(error):
 
     return {"result": result}
 
+
 @app.route("/", methods=['GET'])
 def home_page():
-    return render_template("home.html")
+    return render_template("home/home.html")
+
 
 @app.route("/cars", methods=['GET'])
 def cars_page():
-    return render_template("cars.html")
+    return render_template("car/cars.html")
+
+
+@app.route("/cars/<id>", methods=['GET'])
+def car_page(id):
+    return render_template("car/car.html")
+
 
 @app.route("/orders", methods=['GET'])
 def orders_page():
-    return render_template("orders.html")
+    return render_template("order/orders.html")
 
-@app.route("/help", methods=['GET'])
-def help_page():
-    return render_template("help.html")
+
+@app.route("/tickets", methods=['GET'])
+def tickets_page():
+    return render_template("ticket/tickets.html")
+
+
+@app.route("/tickets/<id>", methods=['GET'])
+def ticket_page(id):
+    return render_template("ticket/ticket.html")
+
 
 @app.route("/admin", methods=['GET'])
 def admin_page():
-    return render_template("admin.html")
+    return render_template("admin/admin.html")
 
-@app.route("/login", methods=['POST'])
+
+@app.route("/account", methods=['GET'])
+def account_page():    
+    return render_template("account/account.html")
+
+
+@app.route("/users", methods=['GET'])
+def users_page():    
+    return render_template("admin/users.html")
+
+
+@app.route("/users/<id>", methods=['GET'])
+def user_page(id):    
+    return render_template("admin/user.html")
+
+
+@app.route("/roles", methods=['GET'])
+def roles_page():    
+    return render_template("admin/roles.html")
+
+
+@app.route("/roles/<id>", methods=['GET'])
+def role_page(id):    
+    return render_template("admin/role.html")
+
+
+@app.route("/login", methods=['GET', 'POST'])
 def request_login():
-    result = []
 
     if request.method == "POST":
         result = account.login()
+        return {"result": result}
+    
+    else:
+        return render_template("account/login.html")
 
-    return {"result": result}
-
-@app.route("/register", methods=['POST'])
+    
+@app.route("/register", methods=['GET', 'POST'])
 def request_register():
-    result = []
 
     if request.method == "POST":
         result = account.register()
+        return {"result": result}
+    
+    else:
+        return render_template("account/register.html")
 
-    return {"result": result}
-
+    
 @app.route("/logout", methods=['POST'])
 def request_logout():
     result = []
@@ -144,6 +178,7 @@ def request_logout():
         result = account.logout()
 
     return {"result": result}
+
 
 @app.route("/user", methods=['POST', 'GET'])
 def request_users():

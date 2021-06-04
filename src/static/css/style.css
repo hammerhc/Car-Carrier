@@ -55,8 +55,3 @@ body {
 .logo {
     flex-grow: 1;
 }
-
-#navButtonAdmin {
-  display: none;
-}
-

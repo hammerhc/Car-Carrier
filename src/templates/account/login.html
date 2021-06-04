@@ -6,4 +6,20 @@
 
 {% block content %}
 <h1>Login</h1>
+
+<div class="formGroup">
+    <label for="inputUsername">Username</label>
+    <input id="inputUsername" type="text">
+</div>
+
+<div class="formGroup">
+    <label for="inputPassword">Password</label>
+    <input id="inputPassword" type="password">
+</div>
+
+<div id="errorbox" class="formGroup">
+    <p id="errorMessage"></p>
+</div>
+
+<button onclick="login(event)">login</button>
 {% endblock %}

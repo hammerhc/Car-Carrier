@@ -14,8 +14,6 @@ var navButtonAdmin = document.getElementById("navButtonAdmin");
 
 var profileButton = document.getElementById("profileButton");
 
-var buyButtonHome = document.getElementById("buyButtonHome");
-
 setEvents();
 
 function navigate(path) {
@@ -30,6 +28,4 @@ function setEvents() {
     navButtonAdmin.addEventListener("click", function () { navigate("/admin") });
 
     profileButton.addEventListener("click", function () { navigate("/account") });
-
-    buyButtonHome.addEventListener("click", function () { navigate("/cars") })
 }

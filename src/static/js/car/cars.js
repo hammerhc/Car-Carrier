@@ -25,12 +25,8 @@ createCards();
 
 function createCards() {
     for (var i = 0; i < cars.length; i++) {
-        var card = `<div class="card">
+        var card = `<div id="car${cars[i].id}" class="card" onclick="openCar(event)">
                         <img>
-                        <div class="cardControls">
-                            <span>${cars[i].price}$</span>
-                            <button id="buyCar${cars[i].id}" class="buyButton" onclick="buyCar(event)">Buy</button>
-                        </div>
                         <p>${cars[i].name} ${cars[i].model} ${cars[i].price}$</p>
                     </div>`
 
@@ -38,6 +34,17 @@ function createCards() {
     }
 }
 
-function buyCar(event) {
-    var carId = event.target.id.replace("buyCar", "");
+function openCar(event) {
+    var carId = event.target.id.replace("car", "");
+
+    if (carId == "") {
+        for (var i = 0; i < event.path.length; i++) {
+            if (event.path[i].id.length > 0) {
+                carId = event.path[i].id.replace("car", "");
+                break;
+            }
+        }
+    }
+
+    navigate("/cars?id=" + carId);
 }

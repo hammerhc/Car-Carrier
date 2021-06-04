@@ -100,7 +100,7 @@ def server_error(error):
 
 @app.route("/", methods=['GET'])
 def home_page():
-    return render_template("index.html")
+    return render_template("home.html")
 
 @app.route("/cars", methods=['GET'])
 def cars_page():

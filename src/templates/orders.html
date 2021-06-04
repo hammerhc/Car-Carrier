@@ -1,50 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="static/js/orders.js" defer></script>
-    <link rel="stylesheet" href="static/css/style.css">
-    <title>Car-Carrier - Orders</title>
-</head>
-<body>
-    <div class="box">
+{% extends "index.html" %}
 
-        <div class="row header">
+{% block javascript %}
+<script src="static/js/orders.js" defer></script>
+{% endblock %}
 
-            <div class="logo">
-                <h1>Car-Carrier</h1>
-            </div>
-
-            <div class="navigation">
-                <div class="navbar">
-                    <button id="navButtonHome" class="navButton">Home</button>
-                    <button id="navButtonCars" class="navButton">Cars</button>
-                    <button id="navButtonOrders" class="navButton">Orders</button>
-                    <button id="navButtonHelp" class="navButton">Help</button>
-                    <button id="navButtonAdmin" class="navButton">Admin</button>
-                </div>
-
-                <div class="search">
-                    <input type="search" placeholder="Search for Cars" value="">
-                </div>
-            </div>
-
-            <div class="profile">
-                <button id="profileButtonHome" class="profileButton">Profile</button>
-            </div>
-
-        </div>
-
-        <div class="row content">
-            <h1>Orders</h1>
-        </div>
-
-        <div class="row footer">
-            <h1>Footer</h1>
-        </div>
-
-    </div>
-</body>
-</html>
+{% block content %}
+    <h1>Orders</h1>
+{% endblock %}

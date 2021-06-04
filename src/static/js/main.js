@@ -12,7 +12,7 @@ var navButtonOrders = document.getElementById("navButtonOrders");
 var navButtonTickets = document.getElementById("navButtonTickets");
 var navButtonAdmin = document.getElementById("navButtonAdmin");
 
-var profileButtonHome = document.getElementById("profileButtonHome");
+var profileButton = document.getElementById("profileButton");
 
 var buyButtonHome = document.getElementById("buyButtonHome");
 
@@ -28,4 +28,8 @@ function setEvents() {
     navButtonOrders.addEventListener("click", function () { navigate("/orders") });
     navButtonTickets.addEventListener("click", function () { navigate("/tickets") });
     navButtonAdmin.addEventListener("click", function () { navigate("/admin") });
+
+    profileButton.addEventListener("click", function () { navigate("/account") });
+
+    buyButtonHome.addEventListener("click", function () { navigate("/cars") })
 }

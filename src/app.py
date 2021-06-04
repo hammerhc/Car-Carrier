@@ -94,14 +94,13 @@ def home_page():
 
 
 @app.route("/cars", methods=['GET'])
-def cars_page():
-    return render_template("car/cars.html")
-
-
-@app.route("/cars/<id>", methods=['GET'])
-def car_page(id):
-    return render_template("car/car.html")
-
+def car_page():
+    car = request.args.get('id', default = 0, type = int)
+    if car > 0:
+        return render_template("car/car.html")
+    else:
+        return render_template("car/cars.html")
+    
 
 @app.route("/orders", methods=['GET'])
 def orders_page():
@@ -110,13 +109,12 @@ def orders_page():
 
 @app.route("/tickets", methods=['GET'])
 def tickets_page():
-    return render_template("ticket/tickets.html")
-
-
-@app.route("/tickets/<id>", methods=['GET'])
-def ticket_page(id):
-    return render_template("ticket/ticket.html")
-
+    ticket = request.args.get('id', default = 0, type = int)
+    if ticket > 0:
+        return render_template("ticket/ticket.html")
+    else:
+        return render_template("ticket/tickets.html")
+    
 
 @app.route("/admin", methods=['GET'])
 def admin_page():
@@ -130,22 +128,20 @@ def account_page():
 
 @app.route("/users", methods=['GET'])
 def users_page():    
-    return render_template("admin/users.html")
-
-
-@app.route("/users/<id>", methods=['GET'])
-def user_page(id):    
-    return render_template("admin/user.html")
+    user = request.args.get('id', default = 0, type = int)
+    if user > 0:
+        return render_template("admin/user.html")
+    else:
+        return render_template("admin/users.html")
 
 
 @app.route("/roles", methods=['GET'])
-def roles_page():    
-    return render_template("admin/roles.html")
-
-
-@app.route("/roles/<id>", methods=['GET'])
-def role_page(id):    
-    return render_template("admin/role.html")
+def roles_page():
+    role = request.args.get('id', default = 0, type = int)
+    if role > 0:
+        return render_template("admin/role.html")
+    else:
+        return render_template("admin/roles.html")    
 
 
 @app.route("/login", methods=['GET', 'POST'])

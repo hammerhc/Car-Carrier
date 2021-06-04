@@ -25,7 +25,7 @@ function setEvents() {
     navButtonCars.addEventListener("click", function () { navigate("/cars") });
     navButtonOrders.addEventListener("click", function () { navigate("/orders") });
     navButtonTickets.addEventListener("click", function () { navigate("/tickets") });
-    navButtonAdmin.addEventListener("click", function () { navigate("/admin") });
+    navButtonAdmin.addEventListener("click", function () { navigate("/users") });
 
     profileButton.addEventListener("click", function () { navigate("/account") });
 }

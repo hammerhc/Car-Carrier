@@ -1,4 +1,4 @@
-var ticketTable = document.getElementById("ticketTable");
+var ticketTable = document.getElementById("ticketsTable");
 
 var tickets = [
     {

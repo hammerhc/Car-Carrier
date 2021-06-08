@@ -5,29 +5,48 @@
 {% endblock %}
 
 {% block content %}
-<h1>User</h1>
+<div class="userContainer">
 
-<div class="detailsContainer">
-    <label for="inputImage">Image</label>
-    <input id="inputImage" type="file" capture>
+    <button class="backButton" onclick="back()">Back</button>
+    <h1 class="contentTitle">User</h1>
 
-    <label for="inputUsername">Username</label>
-    <input id="inputUsername" type="text" readOnly>
+    <div id="userContent" class="main">
+        <div class="formGroup">
+            <label for="inputImage">Image</label>
+            <input id="inputImage" type="file" capture>
+        </div>
 
-    <label for="inputPassword">New Password</label>
-    <input id="inputPassword" type="password">
+        <div class="formGroup">
+            <label for="inputUsername">Username</label>
+            <input id="inputUsername" type="text" readOnly>
+        </div>
 
-    <label for="inputPassword2">Confirm Password</label>
-    <input id="inputPassword2" type="password">
+        <div class="formGroup">
+            <label for="inputPassword">New Password</label>
+            <input id="inputPassword" type="password">
+        </div>
 
-    <label for="inputRole">Role</label>
-    <select id="inputRole">
-        <option value="customer">Customer</option>
-        <option value="agent">Agent</option>
-        <option value="admin">Admin</option>
-    </select>
+        <div class="formGroup">
+            <label for="inputPassword2">Confirm Password</label>
+            <input id="inputPassword2" type="password">
+        </div>
 
-    <button id="cancelButton" class="formButton" onclick="cancel()">Cancel</button>
-    <button id="saveButton" class="formButton" onclick="save()">Save</button>
+        <div class="formGroup">
+            <label for="inputRole">Role</label>
+            <select id="inputRole">
+                <option value="customer">Customer</option>
+                <option value="agent">Agent</option>
+                <option value="admin">Admin</option>
+            </select>
+        </div>
+
+    </div>
+
+    <div id="userControlContainer" class="controlsContainer">
+        <button id="cancelButton" class="formButton" onclick="cancel()">Cancel</button>
+        <button id="saveButton" class="formButton" onclick="save()">Save</button>
+    </div>
+
 </div>
+
 {% endblock %}

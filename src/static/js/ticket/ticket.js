@@ -29,5 +29,5 @@ function sendMessage() {
 }
 
 function createMessage(message) {
-    return `<div class="message"><span>${message}</span></div>`
+    return `<div class="message tri-right"><div class="messageText"><p>${message}</p></div></div>`
 }

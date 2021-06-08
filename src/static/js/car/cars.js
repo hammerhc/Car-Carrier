@@ -26,7 +26,7 @@ createCards();
 function createCards() {
     for (var i = 0; i < cars.length; i++) {
         var card = `<div id="car${cars[i].id}" class="card" onclick="openCar(event)">
-                        <img>
+                        <img class="image">
                         <p>${cars[i].name} ${cars[i].model} ${cars[i].price}$</p>
                     </div>`
 

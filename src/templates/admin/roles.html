@@ -5,16 +5,22 @@
 {% endblock %}
 
 {% block content %}
-<button id="buttonUsers" class="navButton" onclick="users()">Users</button>
-<button id="buttonRoles" class="navButton" onclick="roles()">Roles</button>
+<div class="rolesContainer">
 
-<h1>Roles</h1>
-<table id="rolesTable">
-    <tr>
-        <th>Role ID</th>
-        <th>Name</th>
-        <th>Edit</th>
-        <th>Remove</th>
-    </tr>
-</table>
+    <div class="adminHeader">
+        <button id="buttonUsers" class="navButton" onclick="users()">Users</button>
+        <button id="buttonRoles" class="navButton" onclick="roles()">Roles</button>
+    </div>
+
+    <h1 class="contentTitle">Roles</h1>
+    <table id="rolesTable" class="main">
+        <tr>
+            <th>Role ID</th>
+            <th>Name</th>
+            <th>Edit</th>
+            <th>Remove</th>
+        </tr>
+    </table>
+
+</div>
 {% endblock %}

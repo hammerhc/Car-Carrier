@@ -187,7 +187,7 @@ button:hover {
   row-gap: 10px;
 }
 
-.usersContainer {
+.usersContainer, .rolesContainer {
   box-sizing: border-box;
   width: 100%;
   height: 100%;
@@ -247,7 +247,7 @@ th, td {
   border-bottom: 1px solid black;
 }
 
-#orderTable, #ticketsTable, #usersTable {
+#orderTable, #ticketsTable, #usersTable, #rolesTable {
   height: auto;
   border-spacing: 0px;
 }

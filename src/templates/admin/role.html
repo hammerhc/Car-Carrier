@@ -5,22 +5,34 @@
 {% endblock %}
 
 {% block content %}
-<h1>Role</h1>
+<div class="roleContainer">
 
-<div class="detailsContainer">
-    <label for="inputName">Name</label>
-    <input id="inputName" type="text">
+    <h1 class="contentTitle">Role</h1>
 
-    <input id="roleCustomer" type="radio" name="role" value="customer">
-    <label for="roleCustomer">Customer</label>
+    <div id="roleContent" class="main">
+        <div class="formGroup">
+            <label for="inputName">Name</label>
+            <input id="inputName" type="text">
+        </div>
 
-    <input id="roleAgent" type="radio" name="role" value="agent">
-    <label for="roleAgent">Agent</label>
+        <div class="formGroup">
 
-    <input id="roleAdmin" type="radio" name="role" value="admin">
-    <label for="roleAdmin">Admin</label>
+            <input id="roleCustomer" type="radio" name="role" value="customer" checked>
+            <label for="roleCustomer">Customer</label>
 
-    <button id="cancelButton" class="formButton" onclick="cancel()">Cancel</button>
-    <button id="saveButton" class="formButton" onclick="save()">Save</button>
+            <input id="roleAgent" type="radio" name="role" value="agent">
+            <label for="roleAgent">Agent</label>
+
+            <input id="roleAdmin" type="radio" name="role" value="admin">
+            <label for="roleAdmin">Admin</label>
+        </div>
+
+    </div>
+
+    <div id="roleControlContainer" class="controlsContainer">
+        <button id="cancelButton" class="formButton" onclick="cancel()">Cancel</button>
+        <button id="saveButton" class="formButton" onclick="save()">Save</button>
+    </div>
+
 </div>
 {% endblock %}

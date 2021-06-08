@@ -161,7 +161,7 @@ button:hover {
   align-self: flex-start
 }
 
-.carContainer, .userContainer {
+.carContainer, .userContainer, .roleContainer {
   box-sizing: border-box;
   width: 100%;
   height: 100%;
@@ -272,7 +272,6 @@ th, td {
 }
 
 input {
-  appearance: none;
   font-family: inherit;
   height: 50px;
   font-size: 16px;
@@ -298,7 +297,7 @@ input {
   grid-area: admin;
 }
 
-#userControlContainer {
+#userControlContainer, #roleControlContainer {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -309,7 +308,7 @@ input {
   width: 100%;
 }
 
-#userContent {
+#userContent, #roleContent {
   display: flex;
   flex-direction: column;
 }

@@ -13,7 +13,6 @@
 
 <body>
     <div class="box">
-
         <div class="row header">
 
             <div class="logo">
@@ -30,22 +29,27 @@
                 </div>
 
                 <div class="search">
-                    <input type="search" placeholder="Search for Cars" value="">
+                    <input type="search" class="searchbar" placeholder="Search for Cars" value="">
                 </div>
             </div>
 
             <div class="profile">
-                <button id="profileButton">Profile</button>
+                <button id="profileButton" class="dropButton">Profile</button>
+                <div id="guestContainer" class="dropdownContent">
+                    <button id="registerButton" class="dropdownButton">Create Account</button>
+                    <button id="loginButton" class="dropdownButton">Login</button>
+                </div>
+
+                <div id="userContainer" class="dropdownContent">
+                    <button id="accountButton" class="dropdownButton">Account Settings</button>
+                    <button id="logoutButton" class="dropdownButton">Logout</button>
+                </div>
             </div>
 
         </div>
 
         <div class="row content">
             {% block content %}{% endblock %}
-        </div>
-
-        <div class="row footer">
-            <h1>Footer</h1>
         </div>
 
     </div>

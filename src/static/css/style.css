@@ -1,7 +1,7 @@
-html,
-body {
+html, body {
   height: 100%;
   margin: 0;
+  font-family: Verdana;
 }
 
 .box {
@@ -23,35 +23,93 @@ body {
 }
 
 .row.header {
-    display: flex;
-    flex-flow: row;
-    justify-content: space-between;
-    padding: 10px;
-    border-bottom: 1px solid black;
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+  padding: 10px;
+  border-bottom: 1px solid black;
 }
 
 .row.footer {
-    border-top: 1px solid black;
+  border-top: 1px solid black;
 }
 
 .navigation {
-    display: flex;
-    flex-flow: column;
-    justify-content: space-between;
-    flex-grow: 2;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+  flex-grow: 10;
+  padding: 0px 10px;
+  flex-wrap: nowrap;
 }
 
-.navigation.navbar, .navigation.search {
-    display: flex;
-    flex-flow: row;
-    justify-content: space-between;
+.navigation .navbar, .navigation .search {
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+}
+
+.navButton {
+  width: 100%;
 }
 
 .profile {
-    flex-grow: 1;
-    text-align: end;
+  flex-grow: 0;
+  position: relative;
+  display: inline-block;
 }
 
 .logo {
-    flex-grow: 1;
+  flex-grow: 1;
+}
+
+button {
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: darkgray;
+}
+
+.searchbar {
+  border: 1px solid black;
+  width: 100%;
+  height: 100%;
+}
+
+.dropdownContent {
+  display: none;
+  position: absolute;
+  right: 0;
+  min-width: 150px;
+}
+
+.dropdownContent button {
+  display: block;
+  width: 100%;
+}
+
+.show {
+  display: block;
+}
+
+#buyButtonHome {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+#homeImage {
+  box-sizing: border-box;
+  padding: 10px;
+  width: 100%;
+  height: 100%;
+}
+
+.image {
+  width: 100px;
+  height: 100px;
 }

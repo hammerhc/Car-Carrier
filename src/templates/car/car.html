@@ -5,23 +5,20 @@
 {% endblock %}
 
 {% block content %}
-<div class="contentHeader">
+<div class="carContainer">
+
     <button class="backButton" onclick="back()">Back</button>
-    <h1 id="carName">Test Car </h1>
-</div>
+    <h2 id="carName" class="contentTitle">Test Car </h2>
 
-<div class="detailsContainer">
-    <div class="leftContiner">
-        <img>
+    <img id="carDetailImage" class="image">
 
-        <div class="controlsContainer">
-            <button class="buyButton" onclick="buyCar()">Buy</button>
-            <span class="price">10000$</span>
-        </div>
+    <div class="controlsContainer">
+        <button class="buyButton" onclick="buyCar()">Buy</button>
+        <span class="price">10000$</span>
     </div>
 
-    <div class="rightContiner">
-        <p class="description">Description</p>
-    </div>
+    <p id="carDescription" class="description">Description</p>
+
 </div>
+
 {% endblock %}

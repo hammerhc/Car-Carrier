@@ -5,25 +5,42 @@
 {% endblock %}
 
 {% block content %}
-<h1>Account Settings</h1>
+<div class="accountContainer">
 
-<div class="detailsContainer">
-    <label for="inputImage">Image</label>
-    <input id="inputImage" type="file" capture>
+    <h1 class="contentTitle">Account Settings</h1>
 
-    <label for="inputUsername">Username</label>
-    <input id="inputUsername" type="text" readOnly>
+    <div id="accountContent" class="main">
+        <div class="formGroup">
+            <label for="inputImage">Image</label>
+            <input id="inputImage" type="file" capture>
+        </div>
 
-    <label for="inputOldPassword">Old Password</label>
-    <input id="inputOldPassword" type="password">
+        <div class="formGroup">
+            <label for="inputUsername">Username</label>
+            <input id="inputUsername" type="text" readOnly>
+        </div>
 
-    <label for="inputPassword">New Password</label>
-    <input id="inputPassword" type="password">
+        <div class="formGroup">
+            <label for="inputOldPassword">Old Password</label>
+            <input id="inputOldPassword" type="password">
+        </div>
 
-    <label for="inputPassword2">Confirm Password</label>
-    <input id="inputPassword2" type="password">
+        <div class="formGroup">
+            <label for="inputPassword">New Password</label>
+            <input id="inputPassword" type="password">
+        </div>
 
-    <button id="cancelButton" class="formButton" onclick="cancel()">Cancel</button>
-    <button id="saveButton" class="formButton" onclick="save()">Save</button>
+        <div class="formGroup">
+            <label for="inputPassword2">Confirm Password</label>
+            <input id="inputPassword2" type="password">
+        </div>
+
+    </div>
+
+    <div id="accountControlContainer" class="controlsContainer">
+        <button id="cancelButton" class="formButton" onclick="cancel()">Cancel</button>
+        <button id="saveButton" class="formButton" onclick="save()">Save</button>
+    </div>
+
 </div>
 {% endblock %}

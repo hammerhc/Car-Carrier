@@ -38,12 +38,7 @@ function openCar(event) {
     var carId = event.target.id.replace("car", "");
 
     if (carId == "") {
-        for (var i = 0; i < event.path.length; i++) {
-            if (event.path[i].id.length > 0) {
-                carId = event.path[i].id.replace("car", "");
-                break;
-            }
-        }
+        carId = event.target.parentElement.id.replace("car", "");
     }
 
     navigate("/cars?id=" + carId);

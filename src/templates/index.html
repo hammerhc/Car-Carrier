@@ -12,43 +12,42 @@
 </head>
 
 <body>
-    <div class="box">
-        <div class="row header">
+    <div class="indexContainer">
 
-            <div class="logo">
-                <h1>Car-Carrier</h1>
-            </div>
-
-            <div class="navigation">
-                <div class="navbar">
-                    <button id="navButtonHome" class="navButton">Home</button>
-                    <button id="navButtonCars" class="navButton">Cars</button>
-                    <button id="navButtonOrders" class="navButton">Orders</button>
-                    <button id="navButtonTickets" class="navButton">Tickets</button>
-                    <button id="navButtonAdmin" class="navButton">Admin</button>
-                </div>
-
-                <div class="search">
-                    <input type="search" class="searchbar" placeholder="Search for Cars" value="">
-                </div>
-            </div>
-
-            <div class="profile">
-                <button id="profileButton" class="dropButton">Profile</button>
-                <div id="guestContainer" class="dropdownContent">
-                    <button id="registerButton" class="dropdownButton">Create Account</button>
-                    <button id="loginButton" class="dropdownButton">Login</button>
-                </div>
-
-                <div id="userContainer" class="dropdownContent">
-                    <button id="accountButton" class="dropdownButton">Account Settings</button>
-                    <button id="logoutButton" class="dropdownButton">Logout</button>
-                </div>
-            </div>
-
+        <div class="logo">
+            <h1>Car-Carrier</h1>
         </div>
 
-        <div class="row content">
+        <div class="navigation">
+            <div class="navbar">
+                <button id="navButtonHome" class="navButton">Home</button>
+                <button id="navButtonCars" class="navButton">Cars</button>
+                <button id="navButtonOrders" class="navButton">Orders</button>
+                <button id="navButtonTickets" class="navButton">Tickets</button>
+                <button id="navButtonAdmin" class="navButton">Admin</button>
+            </div>
+
+            <div class="search">
+                <input type="search" class="searchbar" placeholder="Search for Cars" value="">
+            </div>
+        </div>
+
+        <div class="profile">
+            <button id="profileButton" class="dropButton">Profile</button>
+            <div id="guestContainer" class="dropdownContent">
+                <button id="registerButton" class="dropdownButton">Create Account</button>
+                <button id="loginButton" class="dropdownButton">Login</button>
+            </div>
+
+            <div id="userContainer" class="dropdownContent">
+                <button id="accountButton" class="dropdownButton">Account Settings</button>
+                <button id="logoutButton" class="dropdownButton">Logout</button>
+            </div>
+        </div>
+
+        <div class="borderTop"></div>
+
+        <div class="content">
             {% block content %}{% endblock %}
         </div>
 

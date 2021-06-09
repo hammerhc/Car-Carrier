@@ -5,21 +5,29 @@
 {% endblock %}
 
 {% block content %}
-<h1>Login</h1>
+<div class="loginContainer">
 
-<div class="formGroup">
-    <label for="inputUsername">Username</label>
-    <input id="inputUsername" type="text">
+    <h1 class="contentTitle">Login</h1>
+
+    <div id="loginContent" class="main">
+        <div class="formGroup">
+            <label for="inputUsername">Username</label>
+            <input id="inputUsername" type="text">
+        </div>
+
+        <div class="formGroup">
+            <label for="inputPassword">Password</label>
+            <input id="inputPassword" type="password">
+        </div>
+
+        <div id="errorbox" class="formGroup">
+            <p id="errorMessage"></p>
+        </div>
+    </div>
+
+    <div id="loginControlContainer" class="controlsContainer">
+        <button id="loginButton" class="formButton" onclick="login(event)">Login</button>
+    </div>
+
 </div>
-
-<div class="formGroup">
-    <label for="inputPassword">Password</label>
-    <input id="inputPassword" type="password">
-</div>
-
-<div id="errorbox" class="formGroup">
-    <p id="errorMessage"></p>
-</div>
-
-<button id="loginButton" class="formButton" onclick="login(event)">Login</button>
 {% endblock %}

@@ -161,7 +161,7 @@ button:hover {
   align-self: flex-start
 }
 
-.carContainer, .userContainer, .roleContainer, .accountContainer {
+.carContainer, .userContainer, .roleContainer, .accountContainer, .loginContainer {
   box-sizing: border-box;
   width: 100%;
   height: 100%;
@@ -297,7 +297,7 @@ input {
   grid-area: admin;
 }
 
-#userControlContainer, #roleControlContainer, #accountControlContainer {
+#userControlContainer, #roleControlContainer, #accountControlContainer, #loginControlContainer {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -308,7 +308,7 @@ input {
   width: 100%;
 }
 
-#userContent, #roleContent, #accountContent {
+#userContent, #roleContent, #accountContent, #loginContent {
   display: flex;
   flex-direction: column;
 }

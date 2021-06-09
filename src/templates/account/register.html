@@ -5,27 +5,33 @@
 {% endblock %}
 
 {% block content %}
-<h1>Create Account</h1>
+<div class="registerContainer">
 
-<div class="formGroup">
-    <label for="inputUsername">Username</label>
-    <input id="inputUsername" type="text">
+    <h1 class="contentTitle">Create Account</h1>
+
+    <div id="registerContent" class="main">
+        <div class="formGroup">
+            <label for="inputUsername">Username</label>
+            <input id="inputUsername" type="text">
+        </div>
+        
+        <div class="formGroup">
+            <label for="inputPassword">Password</label>
+            <input id="inputPassword" type="password">
+        </div>
+        
+        <div class="formGroup">
+            <label for="inputPassword2">Confirm Password</label>
+            <input id="inputPassword2" type="password">
+        </div>
+        <div id="errorbox" class="formGroup">
+            <p id="errorMessage"></p>
+        </div>
+    </div>
+
+    <div id="registerControlContainer" class="controlsContainer">
+        <button id="registerButton" class="formButton" onclick="createAccount(event)">Create Account</button>
+    </div>
+
 </div>
-
-<div class="formGroup">
-    <label for="inputPassword">Password</label>
-    <input id="inputPassword" type="password">
-</div>
-
-<div class="formGroup">
-    <label for="inputPassword2">Confirm Password</label>
-    <input id="inputPassword2" type="password">
-</div>
-
-<div id="errorbox" class="formGroup">
-    <p id="errorMessage"></p>
-</div>
-
-<button id="registerButton" class="formButton" onclick="createAccount(event)">Create Account</button>
-
 {% endblock %}

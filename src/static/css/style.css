@@ -2,9 +2,12 @@ html, body {
   height: 100%;
   margin: 0;
   font-family: Verdana;
+  background-color: #3F4448;
+  color: #F5F5F2;
 }
 
 * {
+  color: #F5F5F2;
   font-family: Verdana;
 }
 
@@ -15,9 +18,9 @@ html, body {
   width: 100%;
   height: 100%;
   display: grid;
-  grid-template-columns: 250px auto 120px;
-  grid-template-rows: 100px 10px auto;
-  grid-template-areas: "logo navigation profile" "borderTop borderTop borderTop" "main main main";
+  grid-template-columns: 200px auto 120px;
+  grid-template-rows: 100px 50px 10px auto;
+  grid-template-areas: "logo navigation profile" "logo search profile" "borderTop borderTop borderTop" "main main main";
   column-gap: 10px;
   row-gap: 10px;
 }
@@ -82,10 +85,10 @@ html, body {
 
 .navigation {
   grid-area: navigation;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  flex-wrap: nowrap;
+}
+
+.search {
+  grid-area: search;
 }
 
 .profile {
@@ -93,13 +96,14 @@ html, body {
 }
 
 .borderTop {
-  border-top: 1px solid black;
+  border-top: 1px solid #F5F5F2;
   grid-area: borderTop;
 }
 
 .borderBottom {
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid #F5F5F2;
   grid-area: borderBottom;
+  display: none;
 }
 
 .content {
@@ -166,12 +170,22 @@ html, body {
 /* ------------------------ Common CSS Classes ------------------------ */
 
 .image {
+  width: 100px;
+  height: 100px;
   padding: 10px;
 }
 
-.image.full, .full {
+.full {
   box-sizing: border-box;
   width: 100%;
+  height: 100%;
+}
+
+.fullWidth {
+  width: 100%;
+}
+
+.fullHeight {
   height: 100%;
 }
 
@@ -189,57 +203,37 @@ html, body {
 
 /* ------------------------ Controls ------------------------ */
 
-.navButton {
-  width: 100%;
-}
-
-.logo {
-  flex-grow: 1;
-}
-
 button {
   padding: 16px;
   font-size: 16px;
-  border: none;
+  border: 1px solid #3F4448;
   cursor: pointer;
+  background-color: #D0B071;
 }
 
 button:hover {
-  background-color: darkgray;
-}
-
-#profileButton {
-  width: 100%;
+  background-color: #929490;
 }
 
 .searchbar {
-  border: 1px solid black;
+  border: none;
   width: 100%;
   height: 100%;
+  background-color: #D0B071;
+  color: #F5F5F2;
 }
 
-
-#buyButtonHome {
-  position: absolute;
-  top: 50%;
-  left: 50%;
+.searchbar:focus {
+  outline: none;
 }
 
-#homeImage {
-  box-sizing: border-box;
-  padding: 10px;
-  width: 100%;
-  height: 100%;
-}
-
-.image {
-  width: 100px;
-  height: 100px;
+::placeholder {
+  color: #F5F5F2;
 }
 
 #categorySelector {
   height: 50px;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid #F5F5F2;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -268,7 +262,6 @@ button:hover {
   margin: 10px;
   cursor: pointer;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  transition: 0.3s;
 }
 
 .card:hover {
@@ -284,12 +277,10 @@ button:hover {
   align-self: flex-start
 }
 
-
-
 th, td {
   padding: 15px;
   text-align: left;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid #F5F5F2;
 }
 
 #orderTable, #ticketsTable, #usersTable, #rolesTable {
@@ -320,7 +311,8 @@ input {
   font-family: inherit;
   height: 50px;
   font-size: 16px;
-  box-sizing: border-box
+  box-sizing: border-box;
+  color: #3F4448;
 }
 
 .message {

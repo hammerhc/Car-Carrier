@@ -15,21 +15,21 @@
     <div class="indexContainer">
 
         <div class="logo">
-            <h1>Car-Carrier</h1>
+            <h2>Car-Carrier</h2>
         </div>
 
         <div class="navigation">
             <div class="navbar">
-                <button id="navButtonHome" class="navButton">Home</button>
-                <button id="navButtonCars" class="navButton">Cars</button>
-                <button id="navButtonOrders" class="navButton">Orders</button>
-                <button id="navButtonTickets" class="navButton">Tickets</button>
-                <button id="navButtonAdmin" class="navButton">Admin</button>
+                <button id="navButtonHome" class="fullWidth">Home</button>
+                <button id="navButtonCars" class="fullWidth">Cars</button>
+                <button id="navButtonOrders" class="fullWidth">Orders</button>
+                <button id="navButtonTickets" class="fullWidth">Tickets</button>
+                <button id="navButtonAdmin" class="fullWidth">Admin</button>
             </div>
+        </div>
 
-            <div class="search">
-                <input type="search" class="searchbar" placeholder="Search for Cars" value="">
-            </div>
+        <div class="search">
+            <input type="search" class="searchbar" placeholder="Search for Cars" value="">
         </div>
 
         <div class="profile">
@@ -46,6 +46,8 @@
         </div>
 
         <div class="borderTop"></div>
+
+        <div class="borderBottom"></div>
 
         <div class="content">
             {% block content %}{% endblock %}
